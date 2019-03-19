@@ -39,8 +39,20 @@ public class EnseignantRepositoryImpl implements IEnseignantRepository{
 
 	@Override
 	public Enseignant save(Enseignant enseignant) {
-		// TODO Auto-generated method stub
-		return null;
+		Enseignant e = rt.postForObject(
+				"http://localhost:8080/enseignants",
+				enseignant, 
+				Enseignant.class);
+		return e;
+	}
+
+	@Override
+	public void update(Enseignant enseignant, Integer id) {
+		rt.put(
+				"http://localhost:8080/enseignants/"  + id, 
+				enseignant, 
+				Enseignant.class);
+		
 	}
 
 

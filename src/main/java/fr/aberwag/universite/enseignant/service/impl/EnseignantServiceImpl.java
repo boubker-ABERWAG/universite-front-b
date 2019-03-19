@@ -52,7 +52,9 @@ public class EnseignantServiceImpl implements IEnseignantService {
 
 	@Override
 	public Enseignant modifierEnseignant(Enseignant enseignant) {
-		Enseignant e = enseignantRepository.save(enseignant);
+		Integer id = enseignant.getId();
+		enseignantRepository.update(enseignant, id);
+		Enseignant e = enseignantRepository.getOne(id);
 		return e;
 	}
 	

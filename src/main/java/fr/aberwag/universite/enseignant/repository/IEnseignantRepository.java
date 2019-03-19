@@ -11,5 +11,8 @@ public interface IEnseignantRepository {
 	Enseignant getOne(Integer id);
 
 	Enseignant save(Enseignant enseignant);
+	
+	public void update(Enseignant enseignant, Integer id); 
+	public void delete(Integer id);
 
 }
