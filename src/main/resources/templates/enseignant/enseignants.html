@@ -6,6 +6,12 @@
 <link rel="stylesheet" th:href="@{/css/enseignant/enseignants.css}" />
 </head>
 <body>
+<div>
+	<form th:action="@{/enseignants/search}" method="GET">
+		<input type="text" name="nom" />
+		<input type="submit" value="Search" />
+	</form>
+</div>
 	<h1>Liste des enseignants</h1>
 <h1><a th:href="@{ajouter-enseignant}">Ajouter un enseignant</a></h1>
 	<div>

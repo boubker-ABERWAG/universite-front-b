@@ -92,7 +92,8 @@ public class EnseignantController implements IEnseignantController {
 	}
 
 	@Override
-	public String chercherLesEnseignants(Model model, String nom) {
+	@GetMapping("/enseignants/search")
+	public String chercherLesEnseignants(Model model, @RequestParam("nom") String nom) {
 		List<Enseignant> liste = enseignantService.getEnseignants(nom);
 		model.addAttribute("enseignants", liste);
 		return "enseignant/enseignants";
