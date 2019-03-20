@@ -55,6 +55,22 @@ public class EnseignantRepositoryImpl implements IEnseignantRepository{
 		
 	}
 
+	@Override
+	public void delete(Integer id) {
+		rt.delete("http://localhost:8080/enseignants/" + id);
+	}
+
+	@Override
+	public List<Enseignant> getEnseignants(String s) {
+		List<Enseignant> liste = rt.exchange(
+				"http://localhost:8080/enseignants/search/" + s,
+				 HttpMethod.GET,
+				 null,
+				 new ParameterizedTypeReference<List<Enseignant>>(){}
+				).getBody() ;
+		return liste;
+	}
+
 
 
 }

@@ -90,6 +90,13 @@ public class EnseignantController implements IEnseignantController {
 			return "redirect:/enseignants";
 		}
 	}
+
+	@Override
+	public String chercherLesEnseignants(Model model, String nom) {
+		List<Enseignant> liste = enseignantService.getEnseignants(nom);
+		model.addAttribute("enseignants", liste);
+		return "enseignant/enseignants";
+	}
 	
 	
 }

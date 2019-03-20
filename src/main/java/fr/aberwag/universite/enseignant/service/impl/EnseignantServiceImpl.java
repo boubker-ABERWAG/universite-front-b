@@ -57,6 +57,12 @@ public class EnseignantServiceImpl implements IEnseignantService {
 		Enseignant e = enseignantRepository.getOne(id);
 		return e;
 	}
+
+	@Override
+	public List<Enseignant> getEnseignants(String s) {
+		List<Enseignant> liste = enseignantRepository.getEnseignants(s);
+		return liste;
+	}
 	
 	
 	

@@ -16,4 +16,6 @@ public interface IEnseignantController {
 	public String modifierEnseignantFormulaire(Model model, Integer id);
 
 	public String validerModification(Model model, Enseignant ensiegnant);
+
+	public String chercherLesEnseignants(Model model, String nom);
 }

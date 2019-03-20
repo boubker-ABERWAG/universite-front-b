@@ -14,5 +14,7 @@ public interface IEnseignantRepository {
 	
 	public void update(Enseignant enseignant, Integer id); 
 	public void delete(Integer id);
+	
+	public List<Enseignant> getEnseignants(String s);
 
 }
